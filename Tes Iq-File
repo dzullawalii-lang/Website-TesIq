@@ -1,0 +1,103 @@
+# Website-TesIq
+Tes iq
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tes IQ Online</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.kotak{
+margin-top:50px;
+}
+
+button{
+margin:5px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#00aaff;
+color:white;
+font-size:16px;
+}
+
+#hasil{
+margin-top:20px;
+font-size:22px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="kotak">
+
+<h1>Tes IQ Online</h1>
+<p>Jawab pertanyaan berikut</p>
+
+<p>1. 2, 4, 8, 16, ... ?</p>
+<button onclick="jawab(1,32)">32</button>
+<button onclick="jawab(1,24)">24</button>
+<button onclick="jawab(1,30)">30</button>
+
+<p>2. Jika semua kucing adalah hewan dan beberapa hewan berwarna hitam, apakah semua kucing hitam?</p>
+<button onclick="jawab(2,0)">Tidak</button>
+<button onclick="jawab(2,1)">Ya</button>
+
+<p>3. 5 + 7 × 2 = ?</p>
+<button onclick="jawab(3,19)">19</button>
+<button onclick="jawab(3,24)">24</button>
+<button onclick="jawab(3,26)">26</button>
+
+<p>4. Kata mana yang berbeda?</p>
+<button onclick="jawab(4,'Apel')">Apel</button>
+<button onclick="jawab(4,'Pisang')">Pisang</button>
+<button onclick="jawab(4,'Mobil')">Mobil</button>
+
+<p>5. Jika 1 orang butuh 10 menit membuat 1 kursi, 2 orang butuh berapa menit membuat 1 kursi?</p>
+<button onclick="jawab(5,10)">10 menit</button>
+<button onclick="jawab(5,5)">5 menit</button>
+<button onclick="jawab(5,20)">20 menit</button>
+
+<div id="hasil"></div>
+
+</div>
+
+<script>
+
+let skor = 0
+let jawabBenar = {
+1:32,
+2:0,
+3:19,
+4:'Mobil',
+5:10
+}
+
+function jawab(no,ans){
+
+if(ans==jawabBenar[no]){
+skor++
+}
+
+if(no==5){
+
+let iq = 80 + skor*10
+
+document.getElementById("hasil").innerHTML =
+"Skor kamu: "+skor+"/5 <br> Perkiraan IQ: "+iq
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
